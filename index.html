@@ -13,64 +13,58 @@
             <h1>Dice Game</h1>
         </header>
         <main>
-            <!-- <p id="p-01">...Output...</p> -->
             <div class="game">
-                <div class="player-title">
-                    <h3>You</h3>
-                    <div class="dice-title-box">
-                        <h3>Your Dice</h3>
-                        <div class="dice-image-box">
-                            <h3>Dice #1</h3>
-                            <img class="dice-image1" id="player1-dice1-image" src="dice1" alt="dice1" style="display:none">
-                        </div><!--end dice-image-box-->
-                        <div class="dice-image-box">
-                            <h3>Dice #2</h3>
-                            <img class="dice-image2" id="player1-dice2-image" src="dice2" alt="dice2" style="display:none">
-                        </div><!--end dice-image-box-->
-                    </div><!--end dice-title-box-->
+                <div class="player-row"><!--row-->
+                    <div class="player-column" id="player-user"><!--column-->
+                        <h3>You</h3>
+                        <h3 id="title-dice-score">Your Dice</h3>
+                        <div class="innerhtml-dice-image">
+                            <img id="player1-dice1-image" src="images/1.jpg" class="image-center" alt="p1dice1" style="display:none">
+                            <img id="player1-dice2-image" src="images/1.jpg" class="image-center" alt="p1dice2" style="display:none">
+                        </div>
+                        <h3 id="title-dice-score">Your Score</h3>
+                        <div class="innerhtml-dice-image">
+                            <div class="score-column">
+                                <h3>Score this Round</h3>
+                                <p id="round-score1"></p>
+                            </div>
+                            <div class="score-column">
+                                <h3>Total Score</h3>
+                                <p id="total-score1"></p>
+                            </div>
+                        </div>
+                    </div><!--end player-column-->
+                    <div class="player-column" id="player-opponent">
+                        <h3>Opponent</h3>
+                        <h3 id="title-dice-score">Opponent's Dice</h3>
+                        <div class="innerhtml-dice-image" id="image-center">
+                            <img id="player2-dice1-image" src="images/1.jpg" class="image-center" alt="p2dice1" style="display:none">
+                            <img id="player2-dice2-image" src="images/1.jpg" class="image-center" alt="p2dice2" style="display:none">
+                        </div>
+                        <h3 id="title-dice-score">Opponent's Score</h3>
+                        <div class="innerhtml-dice-image">
+                            <div class="score-column">
+                                <h3>Score this Round</h3>
+                                <p id="round-score2"></p>
+                            </div>
+                            <div class="score-column">
+                                <h3>Total Score</h3>
+                                <p id="total-score2"></p>
+                            </div>
+                        </div>
+                    </div><!--end player-column-->
+                </div><!--end player-row-->
+                
+                <div class="button-column">
+                    <button id="btn-newGame">New Game</button>
+                    <button id="btn-rollDice">Roll Dice</button>
+                </div>
 
-                    <div class="player-score-title-box">
-                        <h3>Your Score</h3>
-                        <div class="score-round-box">
-                            <h3>Score this Round</h3>
-                            <p id="round-score1"></p>
-                        </div><!--end score-round-box-->
-                        <div class="total-score-box">
-                            <h3>Total Score</h3>
-                            <p id="total-score1"></p>
-                        </div><!--end total-score-box-->
-                    </div><!--end player-score-title-box-->
-                </div><!--end player-title-->
-
-                <div class="player-title">
-                    <h3>Opponent</h3>
-                    <div class="dice-title-box">
-                        <h3>Opponent's Dice</h3>
-                        <div class="dice-image-box">
-                            <h3>Dice #1</h3>
-                            <img class="dice-image1" id="player2-dice1-image" src="dice1" alt="dice1" style="display:none">
-                        </div><!--end dice-image-box-->
-                        <div class="dice-image-box">
-                            <h3>Dice #2</h3>
-                            <img class="dice-image2" id="player2-dice2-image" src="dice2" alt="dice2" style="display:none">
-                        </div><!--end dice-image-box-->
-                    </div><!--end dice-title-box-->
-
-                    <div class="player-score-title-box">
-                        <h3>Opponent's Score</h3>
-                        <div class="score-round-box">
-                            <h3>Score this Round</h3>
-                            <p id="round-score2"></p>
-                        </div><!--end score-round-box-->
-                        <div class="total-score-box">
-                            <h3>Total Score</h3>
-                            <p id="total-score2"></p>
-                        </div><!--end total-score-box-->
-                    </div><!--end player-score-title-box-->
-                </div><!--end player-title-->
-
-                <button id="btn-newGame">New Game</button>
-                <button id="btn-rollDice">Roll Dice</button>
+                <section id="pop-up">
+                    <h2>Game Over</h2>
+                    <button id="btn-close">&#10005;</button>
+                    <p id="game-over-msg"></p>
+                </section><!--Pop up-->
             </div><!--end game-->
 
             <div class="instruction-rules-box">
@@ -94,7 +88,6 @@
                     </ul>
                 </div><!--end instruction-box-->
             </div><!--end instruction-rules-box-->
-
         </main>     
         <footer>
             COMP 2132 - Web Development with JavaScript
