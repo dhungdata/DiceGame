@@ -212,3 +212,11 @@ function newGame(){
     document.getElementById('round-score2').innerHTML = "";
     document.getElementById('total-score2').innerHTML = "";
 }
+
+/* Edit player's name */
+const editName = document.getElementById("btn-editName");
+editName.addEventListener('click', function(){
+    player1 = prompt("Enter your name");
+
+    document.getElementById('your-name').innerHTML = player1;
+});

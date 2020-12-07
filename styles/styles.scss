@@ -1,21 +1,41 @@
 @charset "utf-8";
 
+// SASS global variables
+$header_colour: #4dd0e1;
+$footer_colour: #00acc1;
+$main_body_colour: #e0f7fa;
+$players_body_colour: #b2ebf2;
+$game_dice_score_colour: #b2d8f2;
+$charcoal_colour: #444444;
+$btn-colour:#4CAF50;
 
+@mixin rounded-buttons-colour($rounded-button, $btn-colour){
+    border-radius: $rounded-button;
+    background-color: $btn-colour;
+}
 
-/* Resets */
+.button {
+    color: black;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 
-/* Paul Irish - Box Sizing Reset 
-   - https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-*/
-/* apply a natural box layout model to all elements, but allowing components to change */
+    @include rounded-buttons-colour(8px, $btn-colour);
+}
+
 
 #pop-up{
     width:300px;
     padding:10px;
-    background-color: #caab00;
-    color:white;
-    border:solid 1px black;
-    box-shadow:0px 0px 5px yellow, 5px 5px 5px black;
+    background-color: #5393f3;
+    color:black;
+    border:solid 1px $charcoal_colour;
+    box-shadow:0px 0px 5px blue, 5px 5px 5px $charcoal_colour;
     position:absolute;
     top:50%;
     left:50%;
@@ -44,13 +64,13 @@
     pointer-events: all;
 }
 #title-dice-score{
-    background: #b2d8f2;
+    background: $game_dice_score_colour;
 }
 #player-user{
-    background: #b2ebf2;
+    background: $players_body_colour;
 }
 #player-opponent{
-    background: #b2ebf2;
+    background: $players_body_colour;
 }
 .player-row{
     display: flex;
@@ -62,7 +82,7 @@
     flex: 50%;
     text-align: center;
     padding: 15px;
-    border: 3px solid #444444;
+    border: 3px solid $charcoal_colour;
 }
 
 .button-column{
@@ -92,20 +112,6 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-// #container{
-//     display:flex;
-//     flex-wrap:wrap;
-//     justify-content: center;
-// }
-
-// #container figure{
-//     flex:0 0 100%;
-//     text-align:center;
-// }
-
-// #container button{
-//     flex:0 0 auto;
-// }
 
 .wrapper {
     max-width: 90%;
@@ -116,8 +122,6 @@ html {
     flex-direction: column;
     
 }
-
-
 
 img {
     max-width: 100%;
@@ -153,12 +157,8 @@ li {
     margin-bottom: 1em;
 }
 
-// code {
-//     background-color: #eeeeee;
-// }
-
 header {
-    background-color: #4dd0e1;
+    background-color: $header_colour;
     padding: 20px;
 }
 
@@ -171,15 +171,8 @@ header h1 {
 main {
     padding: 20px;
     flex: 1;
-    background: #e0f7fa;
+    background: $main_body_colour;
 }
-
-// form {
-//     border: 1px solid #858585;
-//     padding: 20px;
-//     max-width: 360px;
-//     margin-bottom: 30px;
-// }
 
 .input-group {
     display: flex;
@@ -208,19 +201,5 @@ main {
 footer {
     padding: 20px;
     border-top: 1px dotted #858585;
-    background: #00acc1;
+    background: $footer_colour;
 }
-
-// footer p {
-//     line-height: 1;
-//     margin: 0;
-// }
-
-// a{
-// 	font-weight:bold;
-// 	color:#b78731;
-// }
-// a:hover{
-// 	color:orange;
-// 	text-decoration:none;
-// }

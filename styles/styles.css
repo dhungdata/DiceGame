@@ -1,15 +1,24 @@
-/* Resets */
-/* Paul Irish - Box Sizing Reset 
-   - https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-*/
-/* apply a natural box layout model to all elements, but allowing components to change */
+.button {
+  color: black;
+  border: none;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #4CAF50;
+}
+
 #pop-up {
   width: 300px;
   padding: 10px;
-  background-color: #caab00;
-  color: white;
-  border: solid 1px black;
-  box-shadow: 0px 0px 5px yellow, 5px 5px 5px black;
+  background-color: #5393f3;
+  color: black;
+  border: solid 1px #444444;
+  box-shadow: 0px 0px 5px blue, 5px 5px 5px #444444;
   position: absolute;
   top: 50%;
   left: 50%;

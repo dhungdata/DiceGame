@@ -16,7 +16,7 @@
             <div class="game">
                 <div class="player-row"><!--row-->
                     <div class="player-column" id="player-user"><!--column-->
-                        <h3>You</h3>
+                        <h3 id="your-name">You</h3>
                         <h3 id="title-dice-score">Your Dice</h3>
                         <div class="innerhtml-dice-image">
                             <img id="player1-dice1-image" src="images/1.jpg" class="image-center" alt="p1dice1" style="display:none">
@@ -56,8 +56,10 @@
                 </div><!--end player-row-->
                 
                 <div class="button-column">
-                    <button id="btn-newGame">New Game</button>
-                    <button id="btn-rollDice">Roll Dice</button>
+                    <button class="button" id="btn-newGame">New Game</button>
+                    <button class="button" id="btn-editName">Edit Names</button>
+                    <button class="button" id="btn-rollDice">Roll Dice</button>
+                </button> 
                 </div>
 
                 <section id="pop-up">
