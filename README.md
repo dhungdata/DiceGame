@@ -1,5 +1,5 @@
 # DiceGame
-This is a simple dice game built with JavaScript, jQuery, HTML and CSS.
+This is a simple dice game built with JavaScript, jQuery, HTML, SCSS and CSS.
 
 How to Play:
 * To play, click the 'Roll Dice' button.
