@@ -7,7 +7,7 @@ $main_body_colour: #e0f7fa;
 $players_body_colour: #b2ebf2;
 $game_dice_score_colour: #b2d8f2;
 $charcoal_colour: #444444;
-$btn-colour:#4CAF50;
+$btn-colour:#4caf6d;
 
 @mixin rounded-buttons-colour($rounded-button, $btn-colour){
     border-radius: $rounded-button;
@@ -16,7 +16,7 @@ $btn-colour:#4CAF50;
 
 .button {
     color: black;
-    border: none;
+    border: rgba(0, 0, 0, 0.3);
     padding: 8px;
     text-align: center;
     text-decoration: none;
@@ -32,10 +32,10 @@ $btn-colour:#4CAF50;
     border-radius: 4px;
     width: 300px;
     padding:10px;
-    background-color: #5393f3;
+    background-color: #6ed6fc;
     color:black;
-    border:solid 1px $charcoal_colour;
-    box-shadow:0px 0px 5px blue, 5px 5px 5px $charcoal_colour;
+    border:solid 1px rgba(0, 0, 0, 0.3);
+    // box-shadow:0px 0px 5px blue, 5px 5px 5px $charcoal_colour;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -201,5 +201,7 @@ function newGame(){
 /* Edit player's name */
 $("#btn-editName").click(function(){
     player1 = prompt("Enter your name"); 
-    document.getElementById('your-name').innerHTML = player1;
+    if(player1){
+        document.getElementById('your-name').innerHTML = player1;
+    }
 });
