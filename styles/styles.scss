@@ -17,7 +17,7 @@ $btn-colour:#4CAF50;
 .button {
     color: black;
     border: none;
-    padding: 20px;
+    padding: 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -25,44 +25,40 @@ $btn-colour:#4CAF50;
     margin: 4px 2px;
     cursor: pointer;
 
-    @include rounded-buttons-colour(8px, $btn-colour);
+    @include rounded-buttons-colour(4px, $btn-colour);
 }
 
-
 #pop-up{
-    width:300px;
+    border-radius: 4px;
+    width: 300px;
     padding:10px;
     background-color: #5393f3;
     color:black;
     border:solid 1px $charcoal_colour;
     box-shadow:0px 0px 5px blue, 5px 5px 5px $charcoal_colour;
-    position:absolute;
-    top:50%;
-    left:50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform:translate(-50%, -50%);
-    /*
-    animate this opacity property
-    from 0 to 1    
-    */
-    opacity:0;
-    /* 
-    ensure pointer events will go 'through' this section tag 
-    since it might  otherwise overlap the buttons and make them unclickable
-    */
-    pointer-events: none;
+    display: none;
+
+    text-align: center;
+    z-index: 3;
 }
-#btn-close{
-    position:absolute;
-    top:10px;
-    right:10px;
-    font-weight: bold;
-    background-color: inherit;
-    color:inherit;
-    border:solid 1px white;
-    cursor:pointer;
-    /* ensure pointer events will apply to the button */
-    pointer-events: all;
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
+
 #title-dice-score{
     background: $game_dice_score_colour;
 }

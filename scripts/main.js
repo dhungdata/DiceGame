@@ -5,12 +5,7 @@ let roundScore = [0,0];//First index is user's round score. Second index is CPU'
 let totalScore = [0,0];//First index is user's total score. Second index is CPU's total score.
 let roundTurn = 0;// 3 rounds total.
 let activePlayer = 0;//0 is user playing. 1 is CPU playing.
-
-let userHasNotStartedAnimationYet = true;
-let popupAnimationHandler;
-let opacityValue = 0;
-const popUp      = document.getElementById('pop-up');
-const closePopup = document.getElementById('btn-close');
+let player1 = 'You';//Default name
 
 /* Switch active player between user and CPU */
 function switchPlayer(){
@@ -100,7 +95,7 @@ function diceGame(dice1, dice2){
         displayScores();//Display the round score and total score
         console.log(`Player ${activePlayer}'s Total Score: ${totalScore[activePlayer]}\n`);
 
-        switchPlayer();//
+        switchPlayer();
     }else if(dice1 === dice2){//If dice 1 & 2 are the same number...
         roundScore = (dice1+dice2)*2;//...add the two values of the dice*2
         totalScore[activePlayer] += roundScore;
@@ -126,27 +121,8 @@ function diceGame(dice1, dice2){
     }
 }
 
-/* Fade in pop-up message box */
-function fadeIn(){
-    opacityValue = opacityValue + .05;
-    if(opacityValue <= 1){
-        popUp.style.opacity = opacityValue;
-        requestAnimationFrame( fadeIn );
-    }else{
-        popUp.style.opacity = 1;
-    }    
-}
-
-/* Allow user to close and hide the pop-up after they have seen it */
-closePopup.addEventListener("click", function(){
-    //Enable the button in the pop-up so that clicking it will hide the pop-up (eg: either change opacity from 1 back to 0, or apply a display property of none)
-    popUp.style.opacity = "0";//Note: Current CSS style of id="pop-up" is opacity:0;
-    newGame(); //Reset everything when you close the pop-up message.
-});
-
 /* 'Roll Dice' button to play */
-const rollDice = document.getElementById("btn-rollDice");
-rollDice.addEventListener('click', function(){
+$("#btn-rollDice").click(function(){
     //User Roll Dice
     randomizeDice();
     diceGame(diceRoll[0], diceRoll[1]);
@@ -160,39 +136,46 @@ rollDice.addEventListener('click', function(){
     if(roundTurn === 3){
         console.log(`Game Over`);
         if(totalScore[0] > totalScore[1]){
-
-            popupAnimationHandler = requestAnimationFrame( fadeIn );
-            // $('#pop-up').hide().fadeIn();
-
             console.log(`${totalScore[0]} > ${totalScore[1]}`);
             console.log("Congratulations! You win!\n");
-
+            
+            popup();
+            
             document.getElementById('game-over-msg').innerHTML = `${totalScore[0]} > ${totalScore[1]}\n\nCongratulations! You win!`;
         }else if(totalScore[0] < totalScore[1]){
- 
-            popupAnimationHandler = requestAnimationFrame( fadeIn );
-            // $('#pop-up').hide().fadeIn();
-
             console.log(`${totalScore[0]} < ${totalScore[1]}`);
             console.log("You lost! The CPU wins.\n");
 
+            popup();
+
             document.getElementById('game-over-msg').innerHTML = `${totalScore[0]} < ${totalScore[1]}\n\nYou lost! The CPU wins.`;
         }else{
-  
-            popupAnimationHandler = requestAnimationFrame( fadeIn );
-            // $('#pop-up').hide().fadeIn();
-
             console.log(`${totalScore[0]} = ${totalScore[1]}`);
             console.log("Tie game\n");
+
+            popup();
 
             document.getElementById('game-over-msg').innerHTML = `${totalScore[0]} = ${totalScore[1]}\n\nTie game`;
         }
     }
 });
 
+/* Popup message when the game is over */
+function popup(){
+    $('#overlay').fadeIn(100);
+    $('#pop-up').fadeIn(200);
+}
+
+/* Close pope-up*/
+$('#btn-close').click(function() {
+    $('#pop-up').fadeOut(200, function() {
+      $('#overlay').fadeOut(100);
+      newGame(); //Reset everything when you close the pop-up message.
+    });
+});
+
 /* Click to start a new game */
-const newGameButton = document.getElementById("btn-newGame");
-newGameButton.addEventListener('click', function(){
+$("#btn-newGame").click(function(){
     newGame();
 });
 
@@ -203,6 +186,8 @@ function newGame(){
     totalScore = [0,0];
     roundTurn = 0;
     activePlayer = 0;
+    player1 = 'You';
+    document.getElementById('your-name').innerHTML = player1;
     document.getElementById('player1-dice1-image').style.display = "none";
     document.getElementById('player1-dice2-image').style.display = "none";
     document.getElementById('player2-dice1-image').style.display = "none";
@@ -214,9 +199,7 @@ function newGame(){
 }
 
 /* Edit player's name */
-const editName = document.getElementById("btn-editName");
-editName.addEventListener('click', function(){
-    player1 = prompt("Enter your name");
-
+$("#btn-editName").click(function(){
+    player1 = prompt("Enter your name"); 
     document.getElementById('your-name').innerHTML = player1;
 });

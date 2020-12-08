@@ -13,14 +13,15 @@
             <h1>Dice Game</h1>
         </header>
         <main>
+            <div id="overlay"></div>
             <div class="game">
                 <div class="player-row"><!--row-->
                     <div class="player-column" id="player-user"><!--column-->
                         <h3 id="your-name">You</h3>
                         <h3 id="title-dice-score">Your Dice</h3>
                         <div class="innerhtml-dice-image">
-                            <img id="player1-dice1-image" src="images/1.jpg" class="image-center" alt="p1dice1" style="display:none">
-                            <img id="player1-dice2-image" src="images/1.jpg" class="image-center" alt="p1dice2" style="display:none">
+                            <img id="player1-dice1-image" src="" class="image-center" alt="p1dice1" style="display:none">
+                            <img id="player1-dice2-image" src="" class="image-center" alt="p1dice2" style="display:none">
                         </div>
                         <h3 id="title-dice-score">Your Score</h3>
                         <div class="innerhtml-dice-image">
@@ -38,8 +39,8 @@
                         <h3>Opponent</h3>
                         <h3 id="title-dice-score">Opponent's Dice</h3>
                         <div class="innerhtml-dice-image" id="image-center">
-                            <img id="player2-dice1-image" src="images/1.jpg" class="image-center" alt="p2dice1" style="display:none">
-                            <img id="player2-dice2-image" src="images/1.jpg" class="image-center" alt="p2dice2" style="display:none">
+                            <img id="player2-dice1-image" src="" class="image-center" alt="p2dice1" style="display:none">
+                            <img id="player2-dice2-image" src="" class="image-center" alt="p2dice2" style="display:none">
                         </div>
                         <h3 id="title-dice-score">Opponent's Score</h3>
                         <div class="innerhtml-dice-image">
@@ -64,9 +65,11 @@
 
                 <section id="pop-up">
                     <h2>Game Over</h2>
-                    <button id="btn-close">&#10005;</button>
-                    <p id="game-over-msg"></p>
+                     <p id="game-over-msg"></p>
+                     <button class="button" id="btn-close">OK</button>
+                     <!-- <button id="btn-close">&#10005;</button> -->
                 </section><!--Pop up-->
+
             </div><!--end game-->
 
             <div class="instruction-rules-box">
@@ -94,7 +97,7 @@
         <footer>
             COMP 2132 - Web Development with JavaScript
         </footer>
-    </div>
+    </div><!--wrapper-->
     <script src="scripts/jquery-3.4.1.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
