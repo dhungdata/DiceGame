@@ -86,22 +86,34 @@ $btn-colour:#4caf6d;
 }
 .innerhtml-dice-image{
     display:flex;
-    flex-wrap:wrap;
     justify-content: center;
+    height: 140px;
+}
+.dice-column{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .image-center{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 30px;
+}
+.innerhtml-score{
+    display:flex;
+    justify-content: center;
+    height: 75px;
 }
 .score-column{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+#title-nowrap{
+    white-space: nowrap;
+}
 
-//--------------------------
+
 html {
     box-sizing: border-box;
 }

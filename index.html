@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Dice Game</h1>
+            <h1>🎲 Dice Game 🎲</h1>
         </header>
         <main>
             <div id="overlay"></div>
@@ -20,17 +20,21 @@
                         <h3 id="your-name">You</h3>
                         <h3 id="title-dice-score">Your Dice</h3>
                         <div class="innerhtml-dice-image">
-                            <img id="player1-dice1-image" src="" class="image-center" alt="p1dice1" style="display:none">
-                            <img id="player1-dice2-image" src="" class="image-center" alt="p1dice2" style="display:none">
+                            <div class="dice-column">
+                                <img id="player1-dice1-image" src="" class="image-center" alt="p1dice1" style="display:none">
+                            </div>
+                            <div class="dice-column">
+                                <img id="player1-dice2-image" src="" class="image-center" alt="p1dice2" style="display:none">
+                            </div>
                         </div>
                         <h3 id="title-dice-score">Your Score</h3>
-                        <div class="innerhtml-dice-image">
+                        <div class="innerhtml-score">
                             <div class="score-column">
-                                <h3>Score this Round</h3>
+                                <h3 id="title-nowrap">Score this Round</h3>
                                 <p id="round-score1"></p>
                             </div>
                             <div class="score-column">
-                                <h3>Total Score</h3>
+                                <h3 id="title-nowrap">Total Score</h3>
                                 <p id="total-score1"></p>
                             </div>
                         </div>
@@ -38,18 +42,22 @@
                     <div class="player-column" id="player-opponent">
                         <h3>Opponent</h3>
                         <h3 id="title-dice-score">Opponent's Dice</h3>
-                        <div class="innerhtml-dice-image" id="image-center">
-                            <img id="player2-dice1-image" src="" class="image-center" alt="p2dice1" style="display:none">
-                            <img id="player2-dice2-image" src="" class="image-center" alt="p2dice2" style="display:none">
+                        <div class="innerhtml-dice-image">
+                            <div class="dice-column">
+                                <img id="player2-dice1-image" src="" class="image-center" alt="p2dice1" style="display:none">
+                            </div>
+                            <div class="dice-column">
+                                <img id="player2-dice2-image" src="" class="image-center" alt="p2dice2" style="display:none">
+                            </div>
                         </div>
                         <h3 id="title-dice-score">Opponent's Score</h3>
-                        <div class="innerhtml-dice-image">
+                        <div class="innerhtml-score">
                             <div class="score-column">
-                                <h3>Score this Round</h3>
+                                <h3 id="title-nowrap">Score this Round</h3>
                                 <p id="round-score2"></p>
                             </div>
                             <div class="score-column">
-                                <h3>Total Score</h3>
+                                <h3 id="title-nowrap">Total Score</h3>
                                 <p id="total-score2"></p>
                             </div>
                         </div>
