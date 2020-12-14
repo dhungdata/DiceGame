@@ -1,8 +1,7 @@
 # 🎲 Dice Game 🎲
 This is a simple dice game built with JavaScript, jQuery, HTML, SCSS and CSS.
 
-
-Try the game [here](https://dhungdata.github.io/DiceGame/ "🎲 Dice Game 🎲")
+Try the game [here](https://dhungdata.github.io/DiceGame/ "🎲 Dice Game 🎲").
 
 #### How to Play:
 * To play, click the 'Roll Dice' button.
